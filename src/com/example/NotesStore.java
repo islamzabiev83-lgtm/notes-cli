@@ -76,6 +76,7 @@ public class NotesStore {
         return false;
     }
 
+    // ★★★ НОВЫЙ МЕТОД ДЛЯ КОМАНДЫ COUNT ★★★
     public int countNotes() {
         try {
             List<String[]> notes = readAllNotes();
