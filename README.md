@@ -1,9 +1,22 @@
-﻿# Сборка образа
-docker build -t notes-cli:dev .
+﻿# Notes CLI - Консольная утилита для заметок
 
-# Создание папки для данных на хосте
-mkdir -p data
+**Автор:** [islamzabiev83-lgtm](https://github.com/islamzabiev83-lgtm)
 
-# Запуск контейнера с volume
-docker run --rm -v "$PWD/data:/app/data" notes-cli:dev --cmd=add --text="Первая заметка"
-docker run --rm -v "$PWD/data:/app/data" notes-cli:dev --cmd=list
+Консольное Java-приложение для управления текстовыми заметками.
+
+## 📦 Версии
+- **v1.0.0** - MVP: добавление заметок (`add`) и вывод списка (`list`)
+- **v1.1.0** - Добавлена новая команда (удаление или подсчёт)
+
+## 🚀 Запуск
+
+### Локально (без Docker)
+```bash
+# Компиляция
+javac src/com/example/*.java
+
+# Добавление заметки
+java -cp src com.example.App --cmd=add --text="Купить хлеб"
+
+# Вывод всех заметок
+java -cp src com.example.App --cmd=list
